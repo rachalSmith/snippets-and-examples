@@ -6,7 +6,16 @@ export default function GridTemplatesPage() {
           Css Grid Layout Templates
         </h1>
       </header>
-      <section className="container flex flex-col gap-y-6"></section>
+      <section className="container space-y-6 border m-auto">
+        <ul className="grid grid-cols-3 gap-6 border justify-items-center">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+        </ul>
+      </section>
     </>
   );
 }
