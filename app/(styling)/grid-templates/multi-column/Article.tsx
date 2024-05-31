@@ -20,7 +20,7 @@ function ArticleHeader({
   ...props
 }: HTMLAttributes<HTMLHeadingElement>) {
   return (
-    <header
+    <h2
       className={`text-h5 md:text-h4 text-[#424747] ${className}`}
       {...props}
     />
