@@ -1,13 +1,14 @@
 import Image from "next/image";
 import { ArticleHeader } from "../multi-column/Article";
+import { loremIpsum } from "../data";
 
 export default function HolyGrailPage() {
+  const { title, text, heading1, heading2, shortText1, shortText2 } =
+    loremIpsum;
   return (
     <div className="grid grid-cols-5 divide-y divide-gray-100">
       <header className="col-span-5 text-center">
-        <h1 className="w-full text-h4 md:pb-10 pb-4 md:text-h3">
-          Globe Roamer
-        </h1>
+        <h1 className="w-full text-h4 md:pb-10 pb-4 md:text-h3">{title}</h1>
       </header>
 
       <nav className="md:col-span-1 md:border-r p-4 col-span-5">
@@ -31,27 +32,22 @@ export default function HolyGrailPage() {
           className="rounded-lg border-4 border-white w-full max-w-full"
         />
 
-        <ArticleHeader className="py-4">Rabbit Vegetation</ArticleHeader>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio,
-          corrupti expedita doloribus quibusdam magnam aperiam, ut, optio facere
-          accusamus nemo totam fugit quod quaerat minima laboriosam tenetur
-          obcaecati enim. Earum.
-        </p>
+        <ArticleHeader className="py-4">{heading1}</ArticleHeader>
+        <p>{text}</p>
       </article>
 
       <aside className="md:border-l md:col-span-1 p-4 col-span-5">
         <ul>
           <li>
-            <strong>Lorem ipsum:</strong> dolor adipisicing elit.
+            <strong>{heading1}: </strong> {heading2}
           </li>
-          <li>Voluptas eum eligendi error at ipsa molestias.</li>
-          <li>Eveniet temporibus tempore quam aperiam earum, vitae ullam?</li>
+          <li>{shortText1}.</li>
+          <li>{shortText2}</li>
         </ul>
       </aside>
 
       <footer className="col-span-5 p-4 text-center">
-        <p>In iure illum error nemo minus!</p>
+        <p>{shortText2}</p>
       </footer>
     </div>
   );

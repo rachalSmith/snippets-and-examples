@@ -1,12 +1,15 @@
 import Image from "next/image";
 import { Article, ArticleHeader } from "./Article";
+import { loremIpsum } from "../data";
 
 export default function MultiColumnPage() {
+  const { title, text, heading1, heading2, heading3 } = loremIpsum;
+
   return (
     <>
       <header>
         <h1 className="w-full text-h4 md:pb-10 md:text-h3 text-[#424747] border-b border-[#bbc7c7]">
-          Globe Roamer
+          {title}
         </h1>
       </header>
       <div className="grid gap-16 grid-cols-3 my-5 mx-auto">
@@ -21,16 +24,8 @@ export default function MultiColumnPage() {
             className="rounded-lg border-4 border-white w-full max-w-full"
           />
           <div>
-            <ArticleHeader>Rabbit Vegetation</ArticleHeader>
-            <p>
-              Feet evil to hold long he open knew an no. Apartments occasional
-              boisterous as solicitude to introduced. Or fifteen covered we
-              enjoyed demesne is in prepare. In stimulated my everything it
-              literature. Greatly explain attempt perhaps in feeling he. House
-              men taste bed not drawn joy. Through enquire however do equally
-              herself at. Greatly way old may you present improve. Wishing the
-              feeling village him musical.
-            </p>
+            <ArticleHeader>{heading1}</ArticleHeader>
+            <p>{text}</p>
           </div>
         </Article>
         <Article className=" sm:grid sm:items-start sm:gap-16 md:col-span-1 md:grid-cols-1 md:gap-4">
@@ -44,16 +39,8 @@ export default function MultiColumnPage() {
             className="rounded-lg border-4 border-white w-full max-w-full"
           />
           <div>
-            <ArticleHeader>Rabbit Vegetation</ArticleHeader>
-            <p>
-              Feet evil to hold long he open knew an no. Apartments occasional
-              boisterous as solicitude to introduced. Or fifteen covered we
-              enjoyed demesne is in prepare. In stimulated my everything it
-              literature. Greatly explain attempt perhaps in feeling he. House
-              men taste bed not drawn joy. Through enquire however do equally
-              herself at. Greatly way old may you present improve. Wishing the
-              feeling village him musical.
-            </p>
+            <ArticleHeader>{heading2}</ArticleHeader>
+            <p>{text}</p>
           </div>
         </Article>
         <Article className="sm:grid sm:items-start sm:gap-16 md:col-span-1 md:grid-cols-1 md:gap-4">
@@ -66,14 +53,8 @@ export default function MultiColumnPage() {
             className="rounded-lg border-4 border-white w-full max-w-full"
           />
           <div>
-            <ArticleHeader>Unaware Axis</ArticleHeader>
-            <p>
-              Old there any widow law rooms. Agreed but expect repair she nay
-              sir silent person. Direction can dependent one bed situation
-              attempted. His she are man their spite avoid. Her pretended
-              fulfilled extremely education yet. Satisfied did one admitting
-              incommode tolerably how are.
-            </p>
+            <ArticleHeader>{heading2}</ArticleHeader>
+            <p>{text}</p>
           </div>
         </Article>
         <Article className="sm:grid sm:items-start sm:gap-16 md:col-span-1 md:grid-cols-1 md:gap-4">
@@ -86,16 +67,8 @@ export default function MultiColumnPage() {
             className="rounded-lg border-4 border-white w-full max-w-full"
           />
           <div>
-            <ArticleHeader>Lifestyle Measure</ArticleHeader>
-            <p>
-              Cottage out enabled was entered greatly prevent message. No
-              procured unlocked an likewise. Dear but what she been over gay
-              felt body. Six principles advantages and use entreaties
-              decisively. Eat met has dwelling unpacked see whatever followed.
-              Court in of leave again as am. Greater sixteen to forming colonel
-              no on be. So an advice hardly barton. He be turned sudden engage
-              manner spirit.
-            </p>
+            <ArticleHeader>{heading3}</ArticleHeader>
+            <p>{text}</p>
           </div>
         </Article>
       </div>
