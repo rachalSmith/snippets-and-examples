@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Article, ArticleHeader } from "./Article";
 
 export default function MultiColumnPage() {
   return (
@@ -9,7 +10,7 @@ export default function MultiColumnPage() {
         </h1>
       </header>
       <div className="grid gap-16 grid-cols-3 my-5 mx-auto">
-        <article className="col-span-3 grid sm:grid-cols-2 items-start gap-16 pb-10 border-b border-[#bbc7c7]">
+        <Article className="grid items-start gap-16 border-b border-[#bbc7c7]">
           <Image
             priority
             src="/assets/img/roam-balloons.png"
@@ -20,9 +21,7 @@ export default function MultiColumnPage() {
             className="rounded-lg border-4 border-white w-full max-w-full"
           />
           <div>
-            <h2 className="text-h5 md:text-h4 text-[#424747] mb-2">
-              Rabbit Vegetation
-            </h2>
+            <ArticleHeader>Rabbit Vegetation</ArticleHeader>
             <p>
               Feet evil to hold long he open knew an no. Apartments occasional
               boisterous as solicitude to introduced. Or fifteen covered we
@@ -33,8 +32,8 @@ export default function MultiColumnPage() {
               feeling village him musical.
             </p>
           </div>
-        </article>
-        <article className="col-span-3 sm:grid sm:grid-cols-2 sm:items-start sm:gap-16 pb-10 md:col-span-1 md:grid-cols-1 md:gap-4">
+        </Article>
+        <Article className=" sm:grid sm:items-start sm:gap-16 md:col-span-1 md:grid-cols-1 md:gap-4">
           <Image
             priority
             src="/assets/img/roam-balloons.png"
@@ -45,9 +44,7 @@ export default function MultiColumnPage() {
             className="rounded-lg border-4 border-white w-full max-w-full"
           />
           <div>
-            <h3 className="text-h5 md:text-h4 text-[#424747] mb-2">
-              Rabbit Vegetation
-            </h3>
+            <ArticleHeader>Rabbit Vegetation</ArticleHeader>
             <p>
               Feet evil to hold long he open knew an no. Apartments occasional
               boisterous as solicitude to introduced. Or fifteen covered we
@@ -58,8 +55,8 @@ export default function MultiColumnPage() {
               feeling village him musical.
             </p>
           </div>
-        </article>
-        <article className="col-span-3 sm:grid sm:grid-cols-2 sm:items-start sm:gap-16 pb-10 md:col-span-1 md:grid-cols-1 md:gap-4">
+        </Article>
+        <Article className="sm:grid sm:items-start sm:gap-16 md:col-span-1 md:grid-cols-1 md:gap-4">
           <Image
             src="/assets/img/roam-boat.png"
             width="228"
@@ -69,9 +66,7 @@ export default function MultiColumnPage() {
             className="rounded-lg border-4 border-white w-full max-w-full"
           />
           <div>
-            <h3 className="text-h5 md:text-h4 text-[#424747] mb-2">
-              Unaware Axis
-            </h3>
+            <ArticleHeader>Unaware Axis</ArticleHeader>
             <p>
               Old there any widow law rooms. Agreed but expect repair she nay
               sir silent person. Direction can dependent one bed situation
@@ -80,8 +75,8 @@ export default function MultiColumnPage() {
               incommode tolerably how are.
             </p>
           </div>
-        </article>
-        <article className="col-span-3 sm:grid sm:grid-cols-2 sm:items-start sm:gap-16 pb-10 md:col-span-1 md:grid-cols-1 md:gap-4">
+        </Article>
+        <Article className="sm:grid sm:items-start sm:gap-16 md:col-span-1 md:grid-cols-1 md:gap-4">
           <Image
             src="/assets/img/roam-van.png"
             width="228"
@@ -91,9 +86,7 @@ export default function MultiColumnPage() {
             className="rounded-lg border-4 border-white w-full max-w-full"
           />
           <div>
-            <h3 className="text-h5 md:text-h4 text-[#424747]">
-              Lifestyle Measure
-            </h3>
+            <ArticleHeader>Lifestyle Measure</ArticleHeader>
             <p>
               Cottage out enabled was entered greatly prevent message. No
               procured unlocked an likewise. Dear but what she been over gay
@@ -104,7 +97,7 @@ export default function MultiColumnPage() {
               manner spirit.
             </p>
           </div>
-        </article>
+        </Article>
       </div>
     </>
   );
