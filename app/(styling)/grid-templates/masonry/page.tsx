@@ -7,22 +7,7 @@ import {
   MountainsImg,
   VanImg,
 } from "../Images";
-import { HTMLAttributes } from "react";
-
-function Card({
-  children,
-  className,
-  ...props
-}: HTMLAttributes<HTMLDivElement>) {
-  return (
-    <div
-      className={`bg-neutral-50 rounded-md p-4 w-1/4 ${className}`}
-      {...props}
-    >
-      {children}
-    </div>
-  );
-}
+import { Card } from "../Card";
 
 const data = [
   { order: 1, text: loremIpsum.shortText1 },
