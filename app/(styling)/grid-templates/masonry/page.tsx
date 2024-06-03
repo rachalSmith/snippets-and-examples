@@ -1,9 +1,62 @@
-import Image from "next/image";
 import { loremIpsum } from "../data";
 import Link from "next/link";
+import {
+  BalloonsImg,
+  BoatImg,
+  ForestImg,
+  MountainsImg,
+  VanImg,
+} from "../Images";
+import { HTMLAttributes } from "react";
+
+const NUMBERS = [1, 2, 3] as const;
+
+function Card({
+  children,
+  className,
+  ...props
+}: HTMLAttributes<HTMLDivElement>) {
+  return (
+    <div
+      className={`bg-neutral-50 rounded-md p-4 w-1/4 ${className}`}
+      {...props}
+    >
+      {children}
+    </div>
+  );
+}
+
+const data = [
+  { order: 1, text: loremIpsum.shortText1 },
+  { order: 2, text: loremIpsum.shortText2 },
+  {
+    order: 3,
+    img: <BalloonsImg priority width="228" height="152" className="w-full" />,
+  },
+  { order: 4, text: loremIpsum.shortText2 },
+  {
+    order: 5,
+    img: <ForestImg priority width="228" height="152" className="w-full" />,
+  },
+  {
+    order: 6,
+    img: <VanImg priority width="228" height="152" className="w-full" />,
+  },
+  { order: 7, text: loremIpsum.shortText2 },
+  { order: 8, text: loremIpsum.shortText2 },
+  {
+    order: 9,
+    img: <BoatImg priority width="228" height="152" className="w-full" />,
+  },
+  {
+    order: 10,
+    img: <MountainsImg priority width="228" height="152" className="w-full" />,
+  },
+  { order: 11, text: loremIpsum.shortText2 },
+];
 
 export default function MasonryPage() {
-  const { title, heading1, shortText1 } = loremIpsum;
+  const { title } = loremIpsum;
   return (
     <div className="text-center">
       <nav className="grid grid-cols-5 col-span-5 items-baseline border-b border-gray-100">
@@ -20,67 +73,14 @@ export default function MasonryPage() {
       </nav>
 
       <main className="py-10 flex flex-col flex-wrap h-[1250px] content-center gap-4 [&>*:nth-child(3n+1)]:order-1 [&>*:nth-child(3n+2)]:order-2 [&>*:nth-child(3n)]:order-3 ">
-        <div className="bg-neutral-50 rounded-md p-4 w-1/4">
-          <h3>{heading1}</h3>
-          <p>{shortText1}</p>
-        </div>
-        <Image
-          priority
-          src="/assets/img/roam-balloons.png"
-          width="228"
-          height="152"
-          sizes="(min-width: 780px) calc(50vw - 80px), calc(50vw - 60px)"
-          alt="Man and woman watching balloons rise over mountains."
-          className="rounded-lg drop-shadow-sm w-1/4"
-        />
-        <div className="bg-neutral-50 rounded-md p-4 w-1/4">
-          <h3>{heading1}</h3>
-          <p>{shortText1}</p>
-        </div>
-        <Image
-          src="/assets/img/roam-forest.png"
-          width="228"
-          height="152"
-          sizes="(min-width: 780px) calc(33.33vw - 77px), calc(33.26vw - 64px)"
-          alt="Man overlooking a forest."
-          className="rounded-lg drop-shadow-sm w-1/4"
-        />
-        <div className="bg-neutral-50 rounded-md p-4 w-1/4">
-          <h3>{heading1}</h3>
-          <p>{shortText1}</p>
-        </div>{" "}
-        <div className="bg-neutral-50 rounded-md p-4 w-1/4">
-          <h3>{heading1}</h3>
-          <p>{shortText1}</p>
-        </div>
-        <Image
-          src="/assets/img/roam-van.png"
-          width="228"
-          height="152"
-          sizes="(min-width: 780px) calc(33.33vw - 77px), calc(33.26vw - 64px)"
-          alt="Van driving across the desert."
-          className="rounded-lg drop-shadow-sm  w-1/4"
-        />
-        <Image
-          src="/assets/img/roam-boat.png"
-          width="228"
-          height="152"
-          sizes="(min-width: 780px) calc(33.33vw - 77px), calc(33.26vw - 64px)"
-          alt="Man and woman in a row boat on a clear, calm lake."
-          className="rounded-lg drop-shadow-sm w-1/4"
-        />
-        <Image
-          src="/assets/img/roam-mountains.png"
-          width="228"
-          height="152"
-          sizes="(min-width: 780px) calc(33.33vw - 77px), calc(33.26vw - 64px)"
-          alt="Mountains and trees."
-          className="rounded-lg drop-shadow-sm w-1/4"
-        />
-        <div className="bg-neutral-50 rounded-md p-4 w-1/4">
-          <h3>{heading1}</h3>
-          <p>{shortText1}</p>
-        </div>
+        {data.map((d) => (
+          <Card key={d.order}>
+            <h3 className="font-bold mb-2">{d.order}</h3>
+            {d.text && <p>{d.text}</p>}
+            {d.img && <>{d.img}</>}
+          </Card>
+        ))}
+        {/*Force columns*/}
         <span className="basis-full w-0 m-0"></span>
         <span className="basis-full w-0 m-0"></span>
       </main>

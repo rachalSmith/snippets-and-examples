@@ -1,6 +1,6 @@
-import Image from "next/image";
-import { ArticleHeader } from "../multi-column/Article";
+import { Article, ArticleHeader } from "../Article";
 import { loremIpsum } from "../data";
+import { BalloonsImg } from "../Images";
 
 export default function HolyGrailPage() {
   const { title, text, heading1, heading2, shortText1, shortText2 } =
@@ -21,20 +21,16 @@ export default function HolyGrailPage() {
         </ul>
       </nav>
 
-      <article className="md:col-span-3 md:border-r col-span-5 p-4">
-        <Image
+      <Article className="md:col-span-3 md:border-r col-span-5 px-12 pt-8">
+        <BalloonsImg
           priority
-          src="/assets/img/roam-balloons.png"
           width="228"
           height="152"
-          sizes="(min-width: 780px) calc(50vw - 80px), calc(50vw - 60px)"
-          alt="Man and woman watching balloons rise over mountains."
-          className="rounded-lg border-4 border-white w-full max-w-full"
+          className="w-full max-w-full"
         />
-
         <ArticleHeader className="py-4">{heading1}</ArticleHeader>
         <p>{text}</p>
-      </article>
+      </Article>
 
       <aside className="md:border-l md:col-span-1 p-4 col-span-5">
         <ul>
