@@ -9,8 +9,6 @@ import {
 } from "../Images";
 import { HTMLAttributes } from "react";
 
-const NUMBERS = [1, 2, 3] as const;
-
 function Card({
   children,
   className,
